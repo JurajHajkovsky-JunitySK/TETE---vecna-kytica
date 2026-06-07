@@ -63,8 +63,19 @@ const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xqeggkop';
     if (form.querySelector('[name="_gotcha"]')?.value) return;
 
     // Validácia všetkých povinných polí
-    const fields = Array.from(form.querySelectorAll('input[required], textarea[required]'));
+    const fields = Array.from(form.querySelectorAll('input[required]:not([type="checkbox"]), textarea[required]'));
     const valid  = fields.map(validateField).every(Boolean);
+
+    const consent = form.querySelector('#contact-consent');
+    const consentError = consent?.closest('.form-group')?.querySelector('.form-error');
+    if (consent && !consent.checked) {
+      if (consentError) { consentError.textContent = 'Súhlas je povinný.'; consentError.classList.add('visible'); }
+      if (!valid) fields.find(f => f.classList.contains('invalid'))?.focus();
+      else consent.focus();
+      return;
+    }
+    if (consentError) { consentError.textContent = ''; consentError.classList.remove('visible'); }
+
     if (!valid) {
       fields.find(f => f.classList.contains('invalid'))?.focus();
       return;
