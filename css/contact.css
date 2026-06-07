@@ -152,6 +152,8 @@
   font-size: 0.85rem;
   color: #7a5060;
   line-height: 1.6;
+  text-transform: none;
+  letter-spacing: normal;
 }
 
 .consent-label input[type="checkbox"] {
