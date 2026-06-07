@@ -144,7 +144,7 @@
   margin-top: 8px;
 }
 
-.consent-label {
+.form-group .consent-label {
   display: flex;
   align-items: flex-start;
   gap: 12px;
@@ -156,7 +156,7 @@
   letter-spacing: normal;
 }
 
-.consent-label input[type="checkbox"] {
+.form-group .consent-label input[type="checkbox"] {
   width: 18px;
   height: 18px;
   min-width: 18px;
