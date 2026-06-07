@@ -69,7 +69,7 @@ Každý obrázok v galérii má `src` (square thumbnail) a `data-full` (full ver
 
 Formspree endpoint: `https://formspree.io/f/xqeggkop`
 
-Formulár validuje polia (name, email, message) na strane klienta a odosieľa cez fetch. Obsahuje honeypot anti-spam pole (`.form-honeypot`). Pri zmene domény treba pridať novú doménu do allowlistu v Formspree účte.
+Formulár validuje polia (name, email, message) na strane klienta a odosieľa cez fetch. Obsahuje honeypot anti-spam pole (`.form-honeypot`) a GDPR checkbox so súhlasom so spracovaním osobných údajov (povinný pred odoslaním). Pri zmene domény treba pridať novú doménu do allowlistu v Formspree účte.
 
 ## Dizajn — farby (light téma)
 
@@ -83,12 +83,24 @@ Formulár validuje polia (name, email, message) na strane klienta a odosieľa ce
 | Tlmená | `#7a5060` | sekundárny text |
 | Muted | `#a07890` | labely, poznámky |
 
+## Hosting a doména
+
+- GitHub Pages s vlastnou doménou `kvetytety.sk`, HTTPS zapnuté (Enforce HTTPS ✓)
+- DNS spravovaný cez Websupport — 4 A záznamy na GitHub IP, www CNAME na `jurajhajkovsky-junitysk.github.io`
+- CNAME súbor v repozitári obsahuje `kvetytety.sk`
+- Pri problémoch s HTTPS: odstrániť a znova pridať custom doménu v GitHub Pages settings vyvolá nové vydanie certifikátu
+
 ## Čo je pripravené ale neaktívne
 
 - `css/dark.css` — kompletný tmavý dizajn, stačí vymeniť `light.css` za `dark.css` v `index.html`
 - Sekcia "Kvety" (#kvety) — má placeholder "v príprave", čaká na fotky jednotlivých kvetov
 - `pics/flowers/detail/` — JPEG fotky (IMG_6127, IMG_6321, IMG_6325–6327) zatiaľ nie sú v galérii
 
+## Čo chýba (otvorené úlohy)
+
+- `pics/og-cover.jpg` — OG obrázok pre sociálne siete neexistuje, treba vytvoriť
+- Facebook link v kontaktnej sekcii nie je doplnený (zatiaľ `href="#"` resp. nie je vôbec)
+
 ## SEO
 
-V `index.html` sú kompletné meta tagy: title, description, keywords, Open Graph, Twitter Card, JSON-LD (LocalBusiness). Kanonická URL je `https://kvetytety.sk/`. OG obrázok `pics/og-cover.jpg` zatiaľ neexistuje — treba vytvoriť.
+V `index.html` sú kompletné meta tagy: title, description, keywords, Open Graph, Twitter Card, JSON-LD (LocalBusiness). Kanonická URL je `https://kvetytety.sk/`.
