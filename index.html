@@ -3,335 +3,83 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Večná kytica – umelé kvety</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    body {
-      font-family: 'Georgia', serif;
-      background-color: #0a0a0a;
-      color: #f0e6e6;
+  <!-- ══ SEO – základné meta tagy ══════════════════════════════════════════ -->
+  <title>Večné kvety od Tety – Ručne vyrobené umelé kvety a kytice | kvetytety.sk</title>
+  <meta name="description"
+        content="Ručne vyrobené umelé kytice a kvety od Tety, ktoré nikdy nevädnú. Originálny darček pre každú príležitosť – narodeniny, výročia, svadby. Objednajte si svoje večné kvety." />
+  <meta name="keywords"
+        content="umelé kvety, večné kvety, kvety od tety, stabilizované kvety, darček, kytica, handmade kvety, svadobná kytica, umelé kytice Slovensko" />
+  <meta name="author" content="Večné kvety od Tety" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://kvetytety.sk/" />
+  <link rel="icon" type="image/svg+xml" href="pics/favicon.svg" />
+
+  <!-- ══ Open Graph (Facebook, Messenger, LinkedIn …) ══════════════════════ -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://kvetytety.sk/" />
+  <meta property="og:title"       content="Večné kvety od Tety – Ručne vyrobené umelé kvety a kytice" />
+  <meta property="og:description" content="Kvety od Tety — raz darované, navždy krásne. Každá kytica vzniká ručne s láskou a srdcom." />
+  <meta property="og:image"       content="https://kvetytety.sk/pics/og-cover.jpg" />
+  <meta property="og:locale"      content="sk_SK" />
+  <meta property="og:site_name"   content="Večné kvety od Tety" />
+
+  <!-- ══ Twitter Card ══════════════════════════════════════════════════════ -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Večné kvety od Tety – Ručne vyrobené umelé kvety a kytice" />
+  <meta name="twitter:description" content="Kvety od Tety — raz darované, navždy krásne. Každá kytica vzniká ručne s láskou a srdcom." />
+  <meta name="twitter:image"       content="https://kvetytety.sk/pics/og-cover.jpg" />
+
+  <!-- ══ JSON-LD – Structured Data (Google) ════════════════════════════════ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Večné kvety od Tety",
+    "description": "Ručne vyrobené umelé kytice a kvety od Tety, ktoré nikdy nevädnú. Originálny darček pre každú príležitosť.",
+    "url": "https://kvetytety.sk/",
+    "email": "terezia@junity.sk",
+    "image": "https://kvetytety.sk/pics/og-cover.jpg",
+    "priceRange": "€€",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "SK"
+    },
+    "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock",
+      "description": "Ručne vyrobené umelé kytice a jednotlivé kvety"
     }
+  }
+  </script>
 
-    header {
-      background-color: #0a0a0a;
-      text-align: center;
-      padding: 50px 20px 30px;
-      border-bottom: 1px solid #2a1520;
-    }
-
-    header h1 {
-      font-size: 3rem;
-      letter-spacing: 4px;
-      color: #f2e8ea;
-      margin-bottom: 10px;
-    }
-
-    header p {
-      font-size: 1.1rem;
-      color: #9a7080;
-      font-style: italic;
-      letter-spacing: 2px;
-    }
-
-    nav {
-      background-color: #111;
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      padding: 16px;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      border-bottom: 1px solid #2a1520;
-    }
-
-    nav a {
-      color: #f2e8ea;
-      text-decoration: none;
-      font-size: 0.95rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      transition: color 0.2s;
-    }
-
-    nav a:hover { color: #fff; }
-
-    /* HERO */
-    .hero {
-      text-align: center;
-      padding: 44px 20px 40px;
-      background: radial-gradient(ellipse at center, #1a0810 0%, #0a0a0a 70%);
-    }
-
-    .hero h2 {
-      font-size: 2.2rem;
-      color: #f2e8ea;
-      margin-bottom: 20px;
-      letter-spacing: 1px;
-    }
-
-    .hero p {
-      max-width: 580px;
-      margin: 0 auto 36px;
-      font-size: 1.05rem;
-      line-height: 1.9;
-      color: #c0a0a8;
-    }
-
-    .hero a.btn {
-      display: inline-block;
-      border: 1px solid #f2e8ea;
-      color: #f2e8ea;
-      padding: 14px 40px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-size: 0.95rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      transition: all 0.3s;
-    }
-
-    .hero a.btn:hover {
-      background-color: #f2e8ea;
-      color: #0a0a0a;
-    }
-
-    /* GALLERY */
-    .gallery-section {
-      padding: 60px 20px;
-      background-color: #0d0d0d;
-    }
-
-    .gallery-section h2 {
-      text-align: center;
-      color: #f2e8ea;
-      font-size: 1.8rem;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      margin-bottom: 40px;
-    }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      max-width: 960px;
-      margin: 0 auto;
-    }
-
-    @media (max-width: 640px) {
-      .gallery {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    .gallery-item {
-      overflow: hidden;
-      aspect-ratio: 4 / 5;
-      background-color: #1a1a1a;
-      border: 2px solid #f2e8ea;
-      border-radius: 2px;
-      padding: 6px;
-      box-shadow: 0 0 0 1px #2a1015, 0 4px 24px rgba(242, 232, 234, 0.15);
-      transition: box-shadow 0.4s ease;
-    }
-
-    .gallery-item:hover {
-      box-shadow: 0 0 0 1px #f2e8ea, 0 6px 32px rgba(242, 232, 234, 0.35);
-    }
-
-    .gallery-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.5s ease;
-      filter: brightness(0.88);
-    }
-
-    .gallery-item:hover img {
-      transform: scale(1.05);
-      filter: brightness(1);
-    }
-
-    /* FEATURES */
-    .features {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 24px;
-      padding: 60px 20px;
-      background-color: #0a0a0a;
-    }
-
-    .feature {
-      background: #111;
-      border: 1px solid #2a1520;
-      border-radius: 8px;
-      padding: 32px 24px;
-      max-width: 260px;
-      text-align: center;
-    }
-
-    .feature .icon { font-size: 2.5rem; margin-bottom: 16px; }
-    .feature h3 { color: #f2e8ea; margin-bottom: 12px; font-size: 1rem; letter-spacing: 1px; text-transform: uppercase; }
-    .feature p { font-size: 0.95rem; line-height: 1.7; color: #9a7080; }
-
-    /* CONTACT */
-    .contact {
-      text-align: center;
-      padding: 70px 20px;
-      background: radial-gradient(ellipse at center, #1a0810 0%, #0a0a0a 70%);
-      border-top: 1px solid #2a1520;
-    }
-
-    .contact h2 {
-      font-size: 1.8rem;
-      color: #f2e8ea;
-      margin-bottom: 20px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-    }
-
-    .contact p { font-size: 1rem; margin-bottom: 10px; color: #9a7080; }
-
-    .contact a {
-      color: #f2e8ea;
-      text-decoration: none;
-    }
-
-    .contact a:hover { text-decoration: underline; }
-
-    .contact-links {
-      margin-top: 30px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 14px;
-    }
-
-    .contact-links a {
-      display: inline-block;
-      padding: 12px 32px;
-      border-radius: 30px;
-      font-size: 0.95rem;
-      letter-spacing: 1px;
-      text-decoration: none;
-      transition: all 0.3s;
-    }
-
-    .contact-links .email-btn {
-      border: 1px solid #f2e8ea;
-      color: #f2e8ea;
-    }
-
-    .contact-links .email-btn:hover {
-      background-color: #f2e8ea;
-      color: #0a0a0a;
-    }
-
-    .contact-links .fb-btn {
-      background-color: #1877f2;
-      color: white;
-      border: 1px solid #1877f2;
-    }
-
-    .contact-links .fb-btn:hover { background-color: #1558b0; }
-
-    /* LIGHTBOX */
-    .gallery-item {
-      cursor: zoom-in;
-    }
-
-    #lightbox {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.92);
-      z-index: 1000;
-      justify-content: center;
-      align-items: center;
-    }
-
-    #lightbox.active {
-      display: flex;
-    }
-
-    #lightbox img {
-      max-width: 90vw;
-      max-height: 88vh;
-      border: 2px solid #f2e8ea;
-      padding: 6px;
-      background: #0a0a0a;
-      box-shadow: 0 0 60px rgba(242, 232, 234, 0.25);
-      border-radius: 2px;
-      animation: fadeIn 0.25s ease;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.95); }
-      to   { opacity: 1; transform: scale(1); }
-    }
-
-    #lightbox-close {
-      position: fixed;
-      top: 20px;
-      right: 28px;
-      color: #f2e8ea;
-      font-size: 2.2rem;
-      cursor: pointer;
-      line-height: 1;
-      transition: color 0.2s;
-      user-select: none;
-    }
-
-    #lightbox-close:hover { color: #fff; }
-
-    #lightbox-prev,
-    #lightbox-next {
-      position: fixed;
-      top: 50%;
-      transform: translateY(-50%);
-      color: #f2e8ea;
-      font-size: 2.5rem;
-      cursor: pointer;
-      padding: 10px 18px;
-      user-select: none;
-      transition: color 0.2s;
-    }
-
-    #lightbox-prev { left: 16px; }
-    #lightbox-next { right: 16px; }
-    #lightbox-prev:hover, #lightbox-next:hover { color: #fff; }
-
-    footer {
-      background-color: #000;
-      color: #4a3040;
-      text-align: center;
-      padding: 24px;
-      font-size: 0.8rem;
-      letter-spacing: 1px;
-      border-top: 1px solid #1a1a1a;
-    }
-  </style>
+  <!-- ══ Štýly ══════════════════════════════════════════════════════════════ -->
+  <link rel="stylesheet" href="css/light.css" />
+  <link rel="stylesheet" href="css/contact.css" />
 </head>
 <body>
 
   <header>
-    <h1>🌸 Večná kytica</h1>
-    <p>Krása, ktorá nevädne</p>
+    <a href="#o-nas" class="logo-link">
+      <img src="pics/logo.svg"
+           alt="Večné kvety od Tety"
+           class="site-logo"
+           width="320" height="111" />
+    </a>
   </header>
 
-  <nav>
+  <nav aria-label="Hlavná navigácia">
     <a href="#o-nas">O nás</a>
-    <a href="#galeria">Galéria</a>
+    <a href="#kytice">Kytice</a>
+    <a href="#kvety">Kvety</a>
     <a href="#preco-my">Prečo my?</a>
     <a href="#kontakt">Kontakt</a>
   </nav>
 
+  <!-- ══ HERO ══════════════════════════════════════════════════════════════ -->
   <section class="hero" id="o-nas">
-    <h2>Každá kytica je vyrobená s láskou a dušou</h2>
+    <h2>Kvety od Tety — raz darované, navždy krásne</h2>
     <p>
       Každá kytica vzniká ručne — s trpezlivosťou, cítením a srdcom.
       Darujte niečo, čo nevädne a pripomína krásne chvíle každý deň.
@@ -339,107 +87,157 @@
     <a href="#kontakt" class="btn">Kontaktujte nás</a>
   </section>
 
-  <section class="gallery-section" id="galeria">
-    <h2>Galéria</h2>
+  <!-- ══ GALÉRIA – Kytice ════════════════════════════════════════════════== -->
+  <section class="gallery-section" id="kytice">
+    <h2>Kytice</h2>
     <div class="gallery">
-      <div class="gallery-item"><img src="pics/flowers/web/IMG_6127.jpg" alt="Umelé kvety" loading="lazy" /></div>
-      <div class="gallery-item"><img src="pics/flowers/web/IMG_6139.jpg" alt="Umelé kvety" loading="lazy" /></div>
-      <div class="gallery-item"><img src="pics/flowers/web/IMG_6140.jpg" alt="Umelé kvety" loading="lazy" /></div>
-      <div class="gallery-item"><img src="pics/flowers/web/IMG_6141.jpg" alt="Umelé kvety" loading="lazy" /></div>
-      <div class="gallery-item"><img src="pics/flowers/web/IMG_6144.jpg" alt="Umelé kvety" loading="lazy" /></div>
-      <div class="gallery-item"><img src="pics/flowers/web/IMG_6145.jpg" alt="Umelé kvety" loading="lazy" /></div>
+      <div class="gallery-item">
+        <img src="pics/flowers/square/kytica-modra.png"
+             data-full="pics/flowers/full/kytica-modra.png"
+             alt="Ručne viazaná modrá kytica z hortenzií"
+             loading="lazy" />
+      </div>
+      <div class="gallery-item">
+        <img src="pics/flowers/square/kytica-zlta.png"
+             data-full="pics/flowers/full/kytica-zlta.png"
+             alt="Ručne viazaná kytica so slnečnicou"
+             loading="lazy" />
+      </div>
+      <div class="gallery-item">
+        <img src="pics/flowers/square/kytica-fialova.png"
+             data-full="pics/flowers/full/kytica-fialova.png"
+             alt="Ručne viazaná fialová kytica"
+             loading="lazy" />
+      </div>
+      <div class="gallery-item">
+        <img src="pics/flowers/square/kytica-ruzova-lalia.png"
+             data-full="pics/flowers/full/kytica-ruzova-lalia.png"
+             alt="Ručne viazaná ružová kytica s ľaliami"
+             loading="lazy" />
+      </div>
+      <div class="gallery-item">
+        <img src="pics/flowers/square/kytica-pestrokvetova.png"
+             data-full="pics/flowers/full/kytica-pestrokvetova.png"
+             alt="Ručne viazaná pestrá kytica"
+             loading="lazy" />
+      </div>
+      <div class="gallery-item">
+        <img src="pics/flowers/square/kytica-pivonkova.png"
+             data-full="pics/flowers/full/kytica-pivonkova.png"
+             alt="Ručne viazaná ružová pivonková kytica"
+             loading="lazy" />
+      </div>
     </div>
   </section>
 
-  <section class="features" id="preco-my">
+  <!-- ══ GALÉRIA – Kvety ══════════════════════════════════════════════════ -->
+  <section class="gallery-section gallery-section--dev" id="kvety">
+    <h2>Kvety</h2>
+    <div class="under-development">
+      <span class="dev-icon">🌱</span>
+      <p>Táto sekcia je práve v príprave.</p>
+      <p>Čoskoro tu nájdete jednotlivé kvety z našej ponuky.</p>
+    </div>
+  </section>
+
+  <!-- ══ PREČO MY ═══════════════════════════════════════════════════════════ -->
+  <section class="features" id="preco-my" aria-label="Naše výhody">
     <div class="feature">
-      <div class="icon">🌺</div>
+      <div class="icon" aria-hidden="true">🌺</div>
       <h3>Trvácna krása</h3>
-      <p>Naše kvety si zachovajú dokonalý vzhľad celý rok, bez ohľadu na ročné obdobie.</p>
+      <p>Raz darované, navždy krásne — bez zmeny farby, bez opadania.</p>
     </div>
     <div class="feature">
-      <div class="icon">🎁</div>
+      <div class="icon" aria-hidden="true">🎁</div>
       <h3>Skvelý darček</h3>
       <p>Originálny a trvalý darček pre každú príležitosť — narodeniny, výročia, svadby.</p>
     </div>
     <div class="feature">
-      <div class="icon">💚</div>
+      <div class="icon" aria-hidden="true">💚</div>
       <h3>Bez údržby</h3>
       <p>Žiadne zalievanie, žiadne odpadávanie lupeňov. Len čistá krása každý deň.</p>
     </div>
+    <p class="slogan features-slogan">S láskou od Tety&hellip;</p>
   </section>
 
+  <!-- ══ KONTAKT ════════════════════════════════════════════════════════════ -->
   <section class="contact" id="kontakt">
     <h2>Kontaktujte nás</h2>
     <p>Máte záujem o kyticu alebo sa chcete opýtať na niečo viac?</p>
     <p>Napíšte nám a radi vám pomôžeme!</p>
+
     <div class="contact-links">
-      <!-- Doplňte váš email -->
       <a href="mailto:terezia@junity.sk" class="email-btn">📧 terezia@junity.sk</a>
-      <!-- Facebook link - doplniť neskôr -->
-      <a href="#" class="fb-btn">📘 Sledujte nás na Facebooku</a>
     </div>
+
+    <!-- Kontaktný formulár -->
+    <form id="contact-form"
+          class="contact-form"
+          novalidate
+          aria-label="Kontaktný formulár">
+
+      <!-- Honeypot – anti-spam, skryté pred používateľom -->
+      <input class="form-honeypot" type="text" name="_gotcha" tabindex="-1" autocomplete="off" />
+
+      <div class="form-group">
+        <label for="contact-name">Meno a priezvisko</label>
+        <input type="text"
+               id="contact-name"
+               name="name"
+               placeholder="Ján Novák"
+               required
+               autocomplete="name" />
+        <span class="form-error" aria-live="polite"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="contact-email">E-mailová adresa</label>
+        <input type="email"
+               id="contact-email"
+               name="email"
+               placeholder="jan.novak@email.sk"
+               required
+               autocomplete="email" />
+        <span class="form-error" aria-live="polite"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="contact-message">Správa</label>
+        <textarea id="contact-message"
+                  name="message"
+                  placeholder="Popíšte, čo vás zaujíma alebo aký darček hľadáte…"
+                  required></textarea>
+        <span class="form-error" aria-live="polite"></span>
+      </div>
+
+      <button type="submit" id="form-submit-btn" class="form-submit-btn">
+        <span class="spinner" aria-hidden="true"></span>
+        Odoslať správu
+      </button>
+
+      <div id="form-status" class="form-status" role="alert" aria-live="assertive"></div>
+    </form>
   </section>
 
   <footer>
-    <p>&copy; 2026 Večná kytica. Všetky práva vyhradené.</p>
+    <p>&copy; 2026 Večné kvety od Tety. Všetky práva vyhradené.</p>
   </footer>
 
-  <!-- LIGHTBOX -->
-  <div id="lightbox">
-    <span id="lightbox-close">&times;</span>
-    <span id="lightbox-prev">&#8249;</span>
-    <img id="lightbox-img" src="" alt="Náhľad" />
-    <span id="lightbox-next">&#8250;</span>
+  <!-- Lightbox overlay -->
+  <div id="lightbox" role="dialog" aria-modal="true" aria-label="Náhľad fotografie">
+    <span id="lightbox-close" role="button" tabindex="0" aria-label="Zatvoriť">&times;</span>
+    <span id="lightbox-prev"  role="button" tabindex="0" aria-label="Predchádzajúca fotografia">&#8249;</span>
+    <img id="lightbox-img" src="" alt="Náhľad fotografie" />
+    <span id="lightbox-next"  role="button" tabindex="0" aria-label="Nasledujúca fotografia">&#8250;</span>
   </div>
 
-  <script>
-    const images = Array.from(document.querySelectorAll('.gallery-item img'));
-    const lightbox = document.getElementById('lightbox');
-    const lbImg = document.getElementById('lightbox-img');
-    let current = 0;
+  <!-- Animované okvetné lístky na pozadí -->
+  <canvas id="petals-canvas" aria-hidden="true"></canvas>
 
-    function openLightbox(index) {
-      current = index;
-      lbImg.src = images[current].src;
-      lightbox.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeLightbox() {
-      lightbox.classList.remove('active');
-      document.body.style.overflow = '';
-    }
-
-    function showNext() {
-      current = (current + 1) % images.length;
-      lbImg.src = images[current].src;
-    }
-
-    function showPrev() {
-      current = (current - 1 + images.length) % images.length;
-      lbImg.src = images[current].src;
-    }
-
-    images.forEach((img, i) => {
-      img.parentElement.addEventListener('click', () => openLightbox(i));
-    });
-
-    document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
-    document.getElementById('lightbox-next').addEventListener('click', showNext);
-    document.getElementById('lightbox-prev').addEventListener('click', showPrev);
-
-    lightbox.addEventListener('click', (e) => {
-      if (e.target === lightbox) closeLightbox();
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if (!lightbox.classList.contains('active')) return;
-      if (e.key === 'Escape') closeLightbox();
-      if (e.key === 'ArrowRight') showNext();
-      if (e.key === 'ArrowLeft') showPrev();
-    });
-  </script>
+  <!-- Skripty na konci – nezablokujú vykreslenie stránky -->
+  <script src="js/lightbox.js"></script>
+  <script src="js/petals.js"></script>
+  <script src="js/contact.js"></script>
 
 </body>
 </html>
