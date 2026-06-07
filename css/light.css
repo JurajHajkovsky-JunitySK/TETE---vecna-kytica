@@ -118,8 +118,6 @@ nav a:hover { color: #8b2252; }
 .gallery-section {
   padding: 60px 20px;
   background-color: #fdf6f8;
-  position: relative;
-  z-index: 3;
 }
 
 .gallery-section:nth-child(even) {
@@ -159,6 +157,8 @@ nav a:hover { color: #8b2252; }
   box-shadow: 0 4px 18px rgba(192, 82, 122, 0.12);
   transition: box-shadow 0.4s ease, transform 0.3s ease;
   cursor: zoom-in;
+  position: relative;
+  z-index: 3;
 }
 
 .gallery-item:hover {
