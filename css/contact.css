@@ -21,7 +21,7 @@
   margin-bottom: 6px;
 }
 
-.form-group input,
+.form-group input:not([type="checkbox"]),
 .form-group textarea {
   width: 100%;
   padding: 12px 16px;
@@ -37,13 +37,13 @@
   appearance: none;
 }
 
-.form-group input:focus,
+.form-group input:not([type="checkbox"]):focus,
 .form-group textarea:focus {
   border-color: #c0527a;
   box-shadow: 0 0 0 3px rgba(192, 82, 122, 0.12);
 }
 
-.form-group input.invalid,
+.form-group input:not([type="checkbox"]).invalid,
 .form-group textarea.invalid {
   border-color: #d94f6f;
   box-shadow: 0 0 0 3px rgba(217, 79, 111, 0.10);
