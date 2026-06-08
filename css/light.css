@@ -382,12 +382,15 @@ footer {
   }
 
   .hero h2 {
-    font-size: 1.5rem;
+    font-size: 1.35rem;
     letter-spacing: 0;
+    overflow-wrap: break-word;
+    word-break: break-word;
   }
 
   .hero p {
-    font-size: 0.97rem;
+    font-size: 0.95rem;
+    overflow-wrap: break-word;
   }
 
   .hero a.btn {
