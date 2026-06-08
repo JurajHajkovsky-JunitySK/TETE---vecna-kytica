@@ -356,3 +356,44 @@ footer {
   letter-spacing: 1px;
   border-top: 1px solid #e8c8d8;
 }
+
+@media (max-width: 540px) {
+  nav {
+    gap: 16px;
+    padding: 12px 8px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  nav a {
+    font-size: 0.78rem;
+    letter-spacing: 1px;
+    white-space: nowrap;
+  }
+
+  .hero h2 {
+    font-size: 1.5rem;
+    letter-spacing: 0px;
+  }
+
+  .hero p {
+    font-size: 0.97rem;
+  }
+
+  .gallery-section h2,
+  .contact h2 {
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+  }
+
+  .features {
+    padding: 40px 16px;
+  }
+
+  .contact {
+    padding: 48px 16px;
+  }
+}
+
